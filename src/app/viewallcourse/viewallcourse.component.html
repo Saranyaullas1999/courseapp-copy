@@ -2,7 +2,9 @@
 <div class="container">
     <div class="row">
         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-            <table class="table">
+            <div *ngIf="status then showCourse else showLoadingScreen"></div>
+            <ng-template #showCourse>
+              <table class="table">
                 <thead>
                   <tr>
                     <th scope="col">Course Title</th>
@@ -24,6 +26,12 @@
               
                 </tbody>
               </table>
+            </ng-template>
+            <ng-template #showLoadingScreen>
+              <div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ng-template>
         </div>
     </div>
 </div>
