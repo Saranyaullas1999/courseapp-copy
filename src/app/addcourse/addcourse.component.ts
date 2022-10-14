@@ -17,6 +17,9 @@ export class AddcourseComponent implements OnInit {
   courseDuration=""
   courseDate=""
   courseVenue=""
+  status:boolean=false
+
+
 
   readValues=()=>{
   let data ={
@@ -31,6 +34,12 @@ export class AddcourseComponent implements OnInit {
     (response)=>{
       console.log(response)
       alert("Successfully added")
+      this.courseTitle=""
+      this.courseDescription=""
+      this.courseDuration=""
+      this.courseDate=""
+      this.courseVenue=""
+      this.status=true
     }
     
   )
